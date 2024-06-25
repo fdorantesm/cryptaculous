@@ -1,14 +1,14 @@
-import { testCases } from "../../test/cases";
-import { Encryption } from "./encryption";
-import { Algorithm } from "./enums/algorithm.enum";
-import { MissingStrategyException } from "./exceptions/missing-strategy.exception";
-import { AesEncryption } from "./strategies/aes/aes";
-import { Aes256Cbc } from "./strategies/aes/aes.256.cbc";
+import { testCases } from '../../test/cases';
+import { Encryption } from './encryption';
+import { Algorithm } from './enums/algorithm.enum';
+import { MissingStrategyException } from './exceptions/missing-strategy.exception';
+import { AesEncryption } from './strategies/aes/aes';
+import { Aes256Cbc } from './strategies/aes/aes.256.cbc';
 
-describe("Encryption", () => {
+describe('Encryption', () => {
   const testCase = testCases[Algorithm.AES_256_CBC];
 
-  it("should encrypt and decrypt using Aes256Cbc Class", () => {
+  it('should encrypt and decrypt using Aes256Cbc Class', () => {
     const aesStrategy = new Aes256Cbc(testCase.config);
 
     const aes = new Encryption(aesStrategy);
@@ -21,7 +21,7 @@ describe("Encryption", () => {
     expect(secret).toBe(decrypted);
   });
 
-  it("should encrypt and decrypt using AesEncryption class", () => {
+  it('should encrypt and decrypt using AesEncryption class', () => {
     const aesStrategy = new AesEncryption({
       algorithm: Algorithm.AES_256_CBC,
       key: testCase.config.key,
@@ -38,7 +38,7 @@ describe("Encryption", () => {
     expect(secret).toBe(decrypted);
   });
 
-  it("should set an encryption strategy after Encryption instance", () => {
+  it('should set an encryption strategy after Encryption instance', () => {
     const aes = new Encryption();
 
     aes.setStrategy(
@@ -58,9 +58,9 @@ describe("Encryption", () => {
     expect(secret).toBe(decrypted);
   });
 
-  it("should throw an error if no strategy is set", () => {
+  it('should throw an error if no strategy is set', () => {
     const aes = new Encryption();
-    expect(() => aes.encrypt("secret")).toThrow(new MissingStrategyException());
-    expect(() => aes.decrypt("******")).toThrow(new MissingStrategyException());
+    expect(() => aes.encrypt('secret')).toThrow(new MissingStrategyException());
+    expect(() => aes.decrypt('******')).toThrow(new MissingStrategyException());
   });
 });

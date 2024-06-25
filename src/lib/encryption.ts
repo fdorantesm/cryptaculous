@@ -1,5 +1,5 @@
-import { MissingStrategyException } from "./exceptions/missing-strategy.exception";
-import type { EncryptionStrategy } from "./interfaces/encryption.strategy";
+import { MissingStrategyException } from './exceptions/missing-strategy.exception';
+import type { EncryptionStrategy } from './interfaces/encryption.strategy';
 
 export class Encryption {
   private strategy: EncryptionStrategy;

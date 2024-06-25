@@ -1,10 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.InvalidKeyLengthException = void 0;
-class InvalidKeyLengthException extends Error {
-    constructor(message) {
-        super(message);
-    }
-}
-exports.InvalidKeyLengthException = InvalidKeyLengthException;
-//# sourceMappingURL=invalid-key-length.exception.js.map
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.InvalidKeyLengthException=void 0;class InvalidKeyLengthException extends Error{constructor(e){super(e)}}exports.InvalidKeyLengthException=InvalidKeyLengthException;

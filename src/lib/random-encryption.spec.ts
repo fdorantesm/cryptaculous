@@ -1,9 +1,9 @@
-import { testCases } from "../../test/cases";
-import { Algorithm } from "./enums/algorithm.enum";
-import { RandomEncryption } from "./random-encryption";
+import { testCases } from '../../test/cases';
+import { Algorithm } from './enums/algorithm.enum';
+import { RandomEncryption } from './random-encryption';
 
-describe("RandomEncryption", () => {
-  it("should encrypt a secret without pass key and iv", () => {
+describe('RandomEncryption', () => {
+  it('should encrypt a secret without pass key and iv', () => {
     const testCase = testCases[Algorithm.AES_256_CBC];
     const cryptedValue = RandomEncryption.encrypt(
       Algorithm.AES_256_CBC,
@@ -11,13 +11,13 @@ describe("RandomEncryption", () => {
     );
 
     expect(cryptedValue).toBeInstanceOf(Object);
-    expect(cryptedValue).toHaveProperty("payload");
-    expect(cryptedValue).toHaveProperty("key");
-    expect(cryptedValue).toHaveProperty("iv");
-    expect(cryptedValue).toHaveProperty("algorithm");
+    expect(cryptedValue).toHaveProperty('payload');
+    expect(cryptedValue).toHaveProperty('key');
+    expect(cryptedValue).toHaveProperty('iv');
+    expect(cryptedValue).toHaveProperty('algorithm');
   });
 
-  it("should return different values for each encryption", () => {
+  it('should return different values for each encryption', () => {
     const testCase = testCases[Algorithm.AES_256_CBC];
     const cryptedValue1 = RandomEncryption.encrypt(
       Algorithm.AES_256_CBC,

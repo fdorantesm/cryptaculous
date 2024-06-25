@@ -1,19 +1,19 @@
-import * as crypto from "crypto";
-import type { KeyChain } from "./types/key-ring.type";
-import { Algorithm } from "./enums/algorithm.enum";
-import { EncryptionFactory } from "./factories/encryption.factory";
-import { AES_ALGORITHM_MAP } from "./strategies/aes/aes.consts";
+import * as crypto from 'crypto';
+import type { KeyChain } from './types/key-ring.type';
+import { Algorithm } from './enums/algorithm.enum';
+import { EncryptionFactory } from './factories/encryption.factory';
+import { AES_ALGORITHM_MAP } from './strategies/aes/aes.consts';
 
 export class RandomEncryption {
   public static encrypt(algorithm: Algorithm, value: string): KeyChain {
     const params = AES_ALGORITHM_MAP[algorithm];
     const key = crypto
       .randomBytes(Math.ceil(params.keyLength / 2))
-      .toString("hex");
+      .toString('hex');
 
     const iv = crypto
       .randomBytes(Math.ceil(params.ivLength / 2))
-      .toString("hex");
+      .toString('hex');
 
     const crypt = EncryptionFactory.createEncryption(algorithm, { key, iv });
     const payload = crypt.encrypt(value);
