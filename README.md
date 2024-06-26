@@ -1,4 +1,4 @@
-<h1 align="center">Awesome GitHub Profile README</h1>
+<h1 align="center">Cryptaculous</h1>
 
 <div align="center">
 <br>
@@ -11,8 +11,7 @@
 <a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/issues"><img src="https://img.shields.io/github/issues/fdorantesm/cryptaculous?color=red" alt="Issues Badge"/></a>
 <a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/fdorantesm/cryptaculous"></a>
 <a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/master/LICENSE"><img src="https://img.shields.io/github/license/fdorantesm/cryptaculous?color=2b9348" alt="License Badge"/></a>
-
-
+</div>
 
 ### Supported Algorithms
 

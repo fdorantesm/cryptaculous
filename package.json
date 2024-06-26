@@ -1,7 +1,7 @@
 {
   "name": "cryptaculous",
   "description": "A utility with zero dependencies to encrypt and decrypt values ​​by abstracting the native crypto package.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf -rf dist",
