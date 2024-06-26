@@ -1,28 +1,39 @@
-# Cryptaculous
+<h1 align="center">Awesome GitHub Profile README</h1>
 
-## Description
+<div align="center">
+<br>
 
-A utility with zero dependencies to encrypt and decrypt values ​​by abstracting the native crypto package.
+<i>A utility with zero dependencies to encrypt and decrypt values ​​by abstracting the native crypto package.</i>
+
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/stargazers"><img src="https://img.shields.io/github/stars/fdorantesm/cryptaculous" alt="Stars Badge"/></a>
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/network/members"><img src="https://img.shields.io/github/forks/fdorantesm/cryptaculous" alt="Forks Badge"/></a>
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/pulls"><img src="https://img.shields.io/github/issues-pr/fdorantesm/cryptaculous?color=cyan" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/issues"><img src="https://img.shields.io/github/issues/fdorantesm/cryptaculous?color=red" alt="Issues Badge"/></a>
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/fdorantesm/cryptaculous"></a>
+<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/master/LICENSE"><img src="https://img.shields.io/github/license/fdorantesm/cryptaculous?color=2b9348" alt="License Badge"/></a>
+
+
 
 ### Supported Algorithms
 
 | Algorithm | Key Example | IV Example | Secure |
 |-------------|----------------------------------|------------------|--------|
-| AES_128_CBC | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_128_CFB | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_128_CTR | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_128_ECB | 1234567890123456                 |                  | 🔴 No  |
-| AES_128_OFB | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_192_CBC | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_192_CFB | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_192_CTR | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_192_ECB | 123456789012345678901234         |                  | 🔴 No  |
-| AES_192_OFB | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_256_CBC | 1c5b2bc5789a0f9b0c576950aaf049b6 | 704a59f3d523c765 | 🟢 Yes |
-| AES_256_CFB | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
-| AES_256_CTR | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
-| AES_256_ECB | 12345678901234567890123456789012 |                  | 🔴 No  |
-| AES_256_OFB | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
+| AES_128_CBC        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
+| AES_192_CBC        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
+| AES_256_CBC        | 1c5b2bc5789a0f9b0c576950aaf049b6 | 704a59f3d523c765 | 🟢 Yes |
+| AES_128_CFB        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
+| AES_192_CFB        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
+| AES_256_CFB        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
+| AES_128_CTR        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
+| AES_192_CTR        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
+| AES_256_CTR        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
+| AES_128_ECB        | 1234567890123456                 |                  | 🔴 No  |
+| AES_192_ECB        | 123456789012345678901234         |                  | 🔴 No  |
+| AES_256_ECB        | 12345678901234567890123456789012 |                  | 🔴 No  |
+| AES_128_OFB        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
+| AES_192_OFB        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
+| AES_256_OFB        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
+| CHACHA20_POLY_1305 | 12345678901234567890123456789012 | 123456789012     | 🟢 Yes |
 
 ### Examples
 
@@ -118,8 +129,8 @@ const decryptedValue = RandomEncryption.decrypt(cryptedValue) // -> secret
 
 <br/>
 
-<div align="center">
+<div style="align:center;">
     <a href="https://paypal.me/fdorantesm" target="_blank" style="display: inline-block;">
-        <img src="https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&logo=paypal" align="center" />
+        <img src="https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&logo=paypal" />
     </a>
 </div>  

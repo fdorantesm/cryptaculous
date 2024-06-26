@@ -17,4 +17,5 @@ export const AES_ALGORITHM_MAP: AlgorithmMap = {
   [Algorithm.AES_128_CTR]: { keyLength: 16, ivLength: 16 },
   [Algorithm.AES_192_CTR]: { keyLength: 24, ivLength: 16 },
   [Algorithm.AES_256_CTR]: { keyLength: 32, ivLength: 16 },
+  [Algorithm.CHACHA20_POLY_1305]: { keyLength: 32, ivLength: 12 },
 };

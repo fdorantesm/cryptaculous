@@ -154,4 +154,14 @@ export const testCases: AlgorithmCases = {
       crypted: "vEQrcMye",
     },
   },
+  [Algorithm.CHACHA20_POLY_1305]: {
+    config: {
+      key: "12345678901234567890123456789012",
+      iv: "123456789012",
+    },
+    secret: {
+      plain: SECRET,
+      crypted: "8bjL56OH",
+    },
+  },
 };
