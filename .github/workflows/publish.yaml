@@ -28,11 +28,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install production dependencies
-        run: |
-          rm -rf node_modules
-          npm install --production
-
       - name: Set up Git
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

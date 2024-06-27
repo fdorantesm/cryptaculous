@@ -5,12 +5,12 @@
 
 <i>A utility with zero dependencies to encrypt and decrypt values ​​by abstracting the native crypto package.</i>
 
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/stargazers"><img src="https://img.shields.io/github/stars/fdorantesm/cryptaculous" alt="Stars Badge"/></a>
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/network/members"><img src="https://img.shields.io/github/forks/fdorantesm/cryptaculous" alt="Forks Badge"/></a>
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/pulls"><img src="https://img.shields.io/github/issues-pr/fdorantesm/cryptaculous?color=cyan" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/issues"><img src="https://img.shields.io/github/issues/fdorantesm/cryptaculous?color=red" alt="Issues Badge"/></a>
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/fdorantesm/cryptaculous"></a>
-<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/master/LICENSE"><img src="https://img.shields.io/github/license/fdorantesm/cryptaculous?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/fdorantesm/cryptaculous/stargazers"><img src="https://img.shields.io/github/stars/fdorantesm/cryptaculous" alt="Stars Badge"/></a>
+<a href="https://github.com/fdorantesm/cryptaculous/network/members"><img src="https://img.shields.io/github/forks/fdorantesm/cryptaculous" alt="Forks Badge"/></a>
+<a href="https://github.com/fdorantesm/cryptaculous/pulls"><img src="https://img.shields.io/github/issues-pr/fdorantesm/cryptaculous?color=cyan" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/fdorantesm/cryptaculous/issues"><img src="https://img.shields.io/github/issues/fdorantesm/cryptaculous?color=red" alt="Issues Badge"/></a>
+<a href="https://github.com/fdorantesm/cryptaculous/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/fdorantesm/cryptaculous"></a>
+<a href="https://github.com/fdorantesm/cryptaculous/blob/master/LICENSE"><img src="https://img.shields.io/github/license/fdorantesm/cryptaculous?color=2b9348" alt="License Badge"/></a>
 </div>
 
 ### Supported Algorithms
