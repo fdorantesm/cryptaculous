@@ -13,5 +13,6 @@ export declare enum Algorithm {
     AES_256_CFB = "aes-256-cfb",
     AES_256_CTR = "aes-256-ctr",
     AES_256_ECB = "aes-256-ecb",
-    AES_256_OFB = "aes-256-ofb"
+    AES_256_OFB = "aes-256-ofb",
+    CHACHA20_POLY_1305 = "chacha20-poly1305"
 }
