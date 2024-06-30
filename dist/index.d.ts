@@ -25,3 +25,4 @@ export * from "./lib/exceptions/missing-strategy.exception";
 export * from "./lib/exceptions/invalid-iv-length.exception";
 export * from "./lib/exceptions/invalid-key-length.exception";
 export * from "./lib/random-encryption";
+export * from "./lib/strategies/asymmetric/rsa";
