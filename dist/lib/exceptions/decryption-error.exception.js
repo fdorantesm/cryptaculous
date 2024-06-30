@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DecryptionFailedException=void 0;class DecryptionFailedException extends Error{constructor(e){super(e)}}exports.DecryptionFailedException=DecryptionFailedException;

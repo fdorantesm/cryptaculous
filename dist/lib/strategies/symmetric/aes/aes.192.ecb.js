@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Aes192Ecb=void 0;const algorithm_enum_1=require("../../../enums/algorithm.enum"),aes_1=require("./aes");class Aes192Ecb extends aes_1.AesEncryption{constructor(e){super({algorithm:algorithm_enum_1.Algorithm.AES_192_ECB,key:e.key,iv:e.iv})}}exports.Aes192Ecb=Aes192Ecb;

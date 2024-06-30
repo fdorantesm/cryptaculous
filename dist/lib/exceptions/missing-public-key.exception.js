@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.MissingPublicKeyException=void 0;class MissingPublicKeyException extends Error{constructor(){super("Public key is missing")}}exports.MissingPublicKeyException=MissingPublicKeyException;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.MissingPrivateKeyException=void 0;class MissingPrivateKeyException extends Error{constructor(){super("Private key is missing")}}exports.MissingPrivateKeyException=MissingPrivateKeyException;
