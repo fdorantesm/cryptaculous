@@ -3,7 +3,7 @@
 <div align="center">
 <br>
 
-<i>A utility with zero dependencies to encrypt and decrypt values ​​by abstracting the native crypto package.</i>
+<i>A crypt utility with zero dependencies to encrypt and decrypt data ​​by abstracting the native crypto module.</i>
 
 <a href="https://github.com/fdorantesm/cryptaculous/stargazers"><img src="https://img.shields.io/github/stars/fdorantesm/cryptaculous" alt="Stars Badge"/></a>
 <a href="https://github.com/fdorantesm/cryptaculous/network/members"><img src="https://img.shields.io/github/forks/fdorantesm/cryptaculous" alt="Forks Badge"/></a>
@@ -15,30 +15,33 @@
 
 ### Supported Algorithms
 
-| Algorithm | Key Example | IV Example | Secure |
-|-------------|----------------------------------|------------------|--------|
-| AES_128_CBC        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_192_CBC        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_256_CBC        | 1c5b2bc5789a0f9b0c576950aaf049b6 | 704a59f3d523c765 | 🟢 Yes |
-| AES_128_CFB        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_192_CFB        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_256_CFB        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
-| AES_128_CTR        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_192_CTR        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_256_CTR        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
-| AES_128_ECB        | 1234567890123456                 |                  | 🔴 No  |
-| AES_192_ECB        | 123456789012345678901234         |                  | 🔴 No  |
-| AES_256_ECB        | 12345678901234567890123456789012 |                  | 🔴 No  |
-| AES_128_OFB        | 1234567890123456                 | 1234567890123456 | 🟢 Yes |
-| AES_192_OFB        | 123456789012345678901234         | 1234567890123456 | 🟢 Yes |
-| AES_256_OFB        | 12345678901234567890123456789012 | 1234567890123456 | 🟢 Yes |
-| CHACHA20_POLY_1305 | 12345678901234567890123456789012 | 123456789012     | 🟢 Yes |
+| Algorithm | Secure |
+|--------------------|--------|
+| AES_128_CBC        | 🟢 Yes |
+| AES_192_CBC        | 🟢 Yes |
+| AES_256_CBC        | 🟢 Yes |
+| AES_128_CFB        | 🟢 Yes |
+| AES_192_CFB        | 🟢 Yes |
+| AES_256_CFB        | 🟢 Yes |
+| AES_128_CTR        | 🟢 Yes |
+| AES_192_CTR        | 🟢 Yes |
+| AES_256_CTR        | 🟢 Yes |
+| AES_128_ECB        | 🔴 No  |
+| AES_192_ECB        | 🔴 No  |
+| AES_256_ECB        | 🔴 No  |
+| AES_128_OFB        | 🟢 Yes |
+| AES_192_OFB        | 🟢 Yes |
+| AES_256_OFB        | 🟢 Yes |
+| CHACHA20_POLY_1305 | 🟢 Yes |
+| RSA                | 🟢 Yes |
 
 ### Examples
 
-Consider use your own keys and use differents keys to prevent all data decrypted in a snap.
+Try to use secure algorythms but the most important is how you protect the keys.
 
 #### Usage
+
+### Factory method
 
 Using the factory method
 
@@ -53,6 +56,8 @@ const crypt = EncryptionFactory.createEncryption(Algorithm.AES_256_CBC, {
 const cryptedSecret = crypt.encrypt("secret");        // -> EV2YEWJZcpLdBrkqdDij3Q==
 const decryptedSecret = crypt.decrypt(cryptedSecret); // -> secret
 ```
+
+### Strategy pattern
 
 Using a strategies to change the strategy in execution time
 
@@ -75,11 +80,15 @@ const decrypted = crypt.decrypt(crypted); // -> secret
 
 Note: If no strategy set throws `MissingStrategyException`
 
-Random encryption is a secure way to use different key pairs without defining them each time.
+Random encryption is a secure way to use different key and initial vector without defining them each time.
 
 It allows you to generate encryption by passing only the value to be encrypted, and it will generate the key and the vector, returning them as a keychain for future use.
 
 The decrypt method receives that keychain and returns the original value.
+
+### RandomEncryption
+
+Note: Only compatible with Symmetric algorythms
 
 ```ts
 import { RandomEncryption, Algorithm } from 'cryptaculous';
@@ -98,14 +107,51 @@ const cryptedValue = RandomEncryption.encrypt(Algorithm.AES_256_CBC, "secret");
 const decryptedValue = RandomEncryption.decrypt(cryptedValue) // -> secret
 ```
 
-#### Exceptions
+### RSA
 
-| name |
-|:-|
+```ts
+import { Encryption, RsaEncryption } from 'cryptaculous';
+
+const encryption = new Encryption();
+const rsaStrategy = new RsaEncryption();
+
+const { privateKey, publicKey } = RsaEncryption.generateKeyPairSync('rsa', {
+    modulusLength: 2048,
+    publicKeyEncoding: { type: 'spki', format: 'pem' },
+    privateKeyEncoding: { type: 'pkcs8', format: 'pem' },
+});
+
+encryption.setStrategy(rsaStrategy);
+rsaStrategy.setKeys({ privateKey, publicKey });
+
+const secret = 'secret';
+const crypted = encryption.encrypt(secret); 
+
+/*
+cryped:
+G8r816lSY0MVBcxq4EY14SeaoU4oIAK9I2PP8bksLt3KpVzkr7Ncnt4g9517noffn9P1dHbdwxvw9EIMjD4JtuR2okL4TK0BjgMlAoN07SikHmucmcoVF9IdFAK7FcT6LiEveVktSN+Wfu/nOQLH3t032Tk2aaS9vOVGo8j6LFSf5zZcJpgs4/mLh7Z25SUden47CFc2X18I+BUx6ufKfGulq3CLO4oyXGQ+Pw0BNLH5ZRr564kaJcrKx4Dr/ZxxdMVEj8N6K39MonVGebTlNCHbkJdFh0z/bklJXRaGeMke6homSD3yKvb7O45LOlz+fKme2MvCWl+8LLt4SB/cUQ==
+*/
+
+const decrypted = encryption.decrypt(crypted);
+
+const decryptedValue = RandomEncryption.decrypt(cryptedValue) // -> secret
+
+// You could use compare method
+rsa.compare("secret", crypted) // -> true
+```
+
+### Exceptions
+
+| name                          |
+|:------------------------------|
 | UnsupportedAlgorithmException |
-| MissingStrategyException |
-| InvalidKeyLengthException |
-| InvalidIVLengthException |
+| MissingStrategyException      |
+| InvalidKeyLengthException     |
+| InvalidIVLengthException      |
+| DecryptionFailedException     |
+| EncryptionFailedException     |
+| MissingPrivateKeyException    |
+| MissingPublicKeyException     |
 
 <br>
 <br>
@@ -128,7 +174,7 @@ const decryptedValue = RandomEncryption.decrypt(cryptedValue) // -> secret
 
 <br/>
 
-<div style="align:center;">
+<div align="center">
     <a href="https://paypal.me/fdorantesm" target="_blank" style="display: inline-block;">
         <img src="https://img.shields.io/badge/Donate-PayPal-blue.svg?style=flat-square&logo=paypal" />
     </a>

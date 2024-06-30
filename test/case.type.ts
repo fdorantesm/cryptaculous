@@ -1,8 +1,8 @@
 import type { Algorithm } from "../src/lib/enums/algorithm.enum";
 
-export type AlgorithmCases = Record<Algorithm, AlgorithmCase>;
+export type SymmetricAlgorithmCases = Record<Algorithm, SymmetricAlgorithmCase>;
 
-export type AlgorithmCase = {
+export type SymmetricAlgorithmCase = {
   config: {
     key: string;
     iv: string;

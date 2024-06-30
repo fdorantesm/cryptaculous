@@ -15,4 +15,5 @@ export enum Algorithm {
   AES_256_ECB = "aes-256-ecb",
   AES_256_OFB = "aes-256-ofb",
   CHACHA20_POLY_1305 = "chacha20-poly1305",
+  RSA = "rsa",
 }

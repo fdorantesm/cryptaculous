@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 import type { KeyChain } from './types/key-ring.type';
 import { Algorithm } from './enums/algorithm.enum';
 import { EncryptionFactory } from './factories/encryption.factory';
-import { AES_ALGORITHM_MAP } from './strategies/aes/aes.consts';
+import { AES_ALGORITHM_MAP } from './strategies/symmetric/aes/aes.consts';
 
 export class RandomEncryption {
   public static encrypt(algorithm: Algorithm, value: string): KeyChain {

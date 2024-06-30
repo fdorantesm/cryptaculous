@@ -1,22 +1,22 @@
-import type { EncryptionConfigContract } from "../contracts/encryption.config.contract";
+import type { EncryptionOptionsContract } from "../contracts/encryption.options.contract";
 import { Algorithm } from "../enums/algorithm.enum";
 import { UnsupportedAlgorithmException } from "../exceptions/unsupported-algorithm.exception";
 import type { EncryptionStrategy } from "../interfaces/encryption.strategy";
-import { Aes128Cbc } from "../strategies/aes/aes.128.cbc";
-import { Aes128Cfb } from "../strategies/aes/aes.128.cfb";
-import { Aes128Ctr } from "../strategies/aes/aes.128.ctr";
-import { Aes128Ecb } from "../strategies/aes/aes.128.ecb";
-import { Aes128Ofb } from "../strategies/aes/aes.128.ofb";
-import { Aes192Cbc } from "../strategies/aes/aes.192.cbc";
-import { Aes192Cfb } from "../strategies/aes/aes.192.cfb";
-import { Aes192Ctr } from "../strategies/aes/aes.192.ctr";
-import { Aes192Ecb } from "../strategies/aes/aes.192.ecb";
-import { Aes192Ofb } from "../strategies/aes/aes.192.ofb";
-import { Aes256Cbc } from "../strategies/aes/aes.256.cbc";
-import { Aes256Cfb } from "../strategies/aes/aes.256.cfb";
-import { Aes256Ctr } from "../strategies/aes/aes.256.ctr";
-import { Aes256Ecb } from "../strategies/aes/aes.256.ecb";
-import { Aes256Ofb } from "../strategies/aes/aes.256.ofb";
+import { Aes128Cbc } from "../strategies/symmetric/aes/aes.128.cbc";
+import { Aes128Cfb } from "../strategies/symmetric/aes/aes.128.cfb";
+import { Aes128Ctr } from "../strategies/symmetric/aes/aes.128.ctr";
+import { Aes128Ecb } from "../strategies/symmetric/aes/aes.128.ecb";
+import { Aes128Ofb } from "../strategies/symmetric/aes/aes.128.ofb";
+import { Aes192Cbc } from "../strategies/symmetric/aes/aes.192.cbc";
+import { Aes192Cfb } from "../strategies/symmetric/aes/aes.192.cfb";
+import { Aes192Ctr } from "../strategies/symmetric/aes/aes.192.ctr";
+import { Aes192Ecb } from "../strategies/symmetric/aes/aes.192.ecb";
+import { Aes192Ofb } from "../strategies/symmetric/aes/aes.192.ofb";
+import { Aes256Cbc } from "../strategies/symmetric/aes/aes.256.cbc";
+import { Aes256Cfb } from "../strategies/symmetric/aes/aes.256.cfb";
+import { Aes256Ctr } from "../strategies/symmetric/aes/aes.256.ctr";
+import { Aes256Ecb } from "../strategies/symmetric/aes/aes.256.ecb";
+import { Aes256Ofb } from "../strategies/symmetric/aes/aes.256.ofb";
 
 export class EncryptionFactory {
   private constructor() {
@@ -25,14 +25,14 @@ export class EncryptionFactory {
 
   public static createEncryption(
     algorithm: Algorithm,
-    config: EncryptionConfigContract
+    config: EncryptionOptionsContract
   ): EncryptionStrategy {
     return this.getEncryptionClass(algorithm, config);
   }
 
   private static getEncryptionClass(
     algorithm: Algorithm,
-    config: EncryptionConfigContract
+    config: EncryptionOptionsContract
   ): EncryptionStrategy {
     const map = {
       [Algorithm.AES_128_CBC]: Aes128Cbc,
