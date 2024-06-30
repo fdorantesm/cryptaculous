@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.UnsupportedAlgorithmException=void 0;class UnsupportedAlgorithmException extends Error{constructor(t){super(`Unsupported algorithm: ${t}`)}}exports.UnsupportedAlgorithmException=UnsupportedAlgorithmException;

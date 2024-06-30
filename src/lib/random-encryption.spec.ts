@@ -1,10 +1,10 @@
-import { testCases } from '../../test/cases';
+import { symmetricTestCases } from '../../test/symmetric-cases';
 import { Algorithm } from './enums/algorithm.enum';
 import { RandomEncryption } from './random-encryption';
 
 describe('RandomEncryption', () => {
   it('should encrypt a secret without pass key and iv', () => {
-    const testCase = testCases[Algorithm.AES_256_CBC];
+    const testCase = symmetricTestCases[Algorithm.AES_256_CBC];
     const cryptedValue = RandomEncryption.encrypt(
       Algorithm.AES_256_CBC,
       testCase.secret.plain
@@ -18,7 +18,7 @@ describe('RandomEncryption', () => {
   });
 
   it('should return different values for each encryption', () => {
-    const testCase = testCases[Algorithm.AES_256_CBC];
+    const testCase = symmetricTestCases[Algorithm.AES_256_CBC];
     const cryptedValue1 = RandomEncryption.encrypt(
       Algorithm.AES_256_CBC,
       testCase.secret.plain

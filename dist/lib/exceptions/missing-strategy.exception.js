@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.MissingStrategyException=void 0;class MissingStrategyException extends Error{constructor(){super("Missing encryption strategy")}}exports.MissingStrategyException=MissingStrategyException;
